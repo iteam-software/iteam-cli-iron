@@ -4,7 +4,7 @@
   "description": "iTEAM CLI: Iron is used to scaffold, build and deploy iTEAM Consulting front end web projects.",
   "main": "lib/cli/index.js",
   "scripts": {
-    "start": "node ./lib/cli/index.js",
+    "start": "node ./bin/iron",
     "test": "jest"
   },
   "bin": {
@@ -31,7 +31,11 @@
   },
   "homepage": "https://iteam-consulting.github.io/iteam-cli-iron/",
   "dependencies": {
-    "chalk": "^2.3.0"
+    "argparse": "^1.0.9",
+    "chalk": "^2.3.0",
+    "resolve": "^1.5.0",
+    "rimraf": "^2.6.2",
+    "slug": "^0.9.1"
   },
   "devDependencies": {
     "jest": "^21.2.1"

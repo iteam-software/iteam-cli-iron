@@ -1,0 +1,24 @@
+'use strict';
+
+/**
+ * This file is heavily inspired by the ember-cli bin/ember implementation.
+ * All credit goes to the ember-cli team and their contributors.  Keep up the
+ * good work!
+ */
+
+process.title = 'iron';
+
+const resolve = require('resolve');
+
+resolve('iteam-cli-iron', {
+  baseDir: process.cwd(),
+}, function(err, local) {
+  let cli;
+  if (err) {
+    cli = require('../lib/cli');
+  } else {
+    cli = require(local);
+  }
+
+  cli.invoke(process.argv.slice(2));
+});
