@@ -2,9 +2,6 @@
 const Command = require('../../../lib/abstractions/command');
 
 module.exports = class SynchronousCommand extends Command {
-  // isSync() {
-  //   return false;
-  // }
   constructor() {
     super();
 
@@ -15,12 +12,12 @@ module.exports = class SynchronousCommand extends Command {
     return [
       () => new Promise((res) => {
         setTimeout(() => {
-          results.push('first');
           res('first');
-        }, 500);
+          this.results.push('first');
+        }, 5);
       }),
       () => {
-        results.push('second');
+        this.results.push('second');
         return Promise.resolve('second');
       },
     ];
