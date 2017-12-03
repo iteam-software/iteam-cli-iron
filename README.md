@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/iteam-consulting/iteam-cli-iron.svg?branch=master)](https://travis-ci.org/iteam-consulting/iteam-cli-iron)
+[![codecov](https://codecov.io/gh/iteam-consulting/iteam-cli-iron/branch/master/graph/badge.svg)](https://codecov.io/gh/iteam-consulting/iteam-cli-iron)
+
 # iTEAM Consulting CLI: Iron
 Iron is used to scaffold, build, test, run and deploy iTEAM Consulting frontend web projects.
 
