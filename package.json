@@ -5,7 +5,9 @@
   "main": "lib/cli/index.js",
   "scripts": {
     "start": "node ./bin/iron",
-    "test": "jest --coverage && codecov"
+    "test-ci": "jest --coverage && codecov",
+    "test": "jest",
+    "watch": "jest --watch"
   },
   "bin": {
     "iron": "./bin/iron"

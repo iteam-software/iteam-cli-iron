@@ -1,5 +1,5 @@
 const Command = require('../../lib/abstractions/command');
-const SynchronousCommand = require('./fakes/SynchronousCommand');
+const SynchronousCommand = require('./fakes/synchronous-command');
 
 it('should construct a command', () => {
   expect(new Command()).toBeTruthy();
