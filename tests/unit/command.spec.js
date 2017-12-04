@@ -5,6 +5,10 @@ it('should construct a command', () => {
   expect(new Command()).toBeTruthy();
 });
 
+it('should have no tasks on the abstractions', () => {
+  expect(new Command().tasks().length).toBe(0);
+});
+
 it('should throw if name is called on the abstraction', () => {
   expect(() => new Command().name()).toThrow();
 });
