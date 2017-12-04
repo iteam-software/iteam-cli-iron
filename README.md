@@ -17,6 +17,24 @@ Once installed, you will have access to the ```iron``` tool from your command li
 iron new <project>
 ```
 This creates a new folder in your current directory, and initializes the Iron project with default settings. Once the initialization is complete, use ```cd <project>``` to enter the project directory.
+#### Project Structure
+```
+<project name>
+├── ■ build
+├── ■ config
+│   └── webpack.config.js
+├── ■ src
+│   ├── ■ components
+│   ├── ■ containers
+│   ├── ■ middleware
+│   ├── ■ models
+│   ├── ■ reducers
+│   ├── ■ routes
+│   └── index.js
+├── ■ test
+├── .gitignore
+└── package.json
+```
 
 ## Contributing
 Iron is an open source project managed by iTEAM Consulting. We would love to see your ideas! Please review our [contributing guide](https://github.com/iteam-consulting/iteam-cli-iron/blob/master/CONTRIBUTING.md) and submit a PR!
