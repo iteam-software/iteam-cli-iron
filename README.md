@@ -35,6 +35,12 @@ This creates a new folder in your current directory, and initializes the Iron pr
 ├── .gitignore
 └── package.json
 ```
+#### Building the project
+To build the project, execute the following command from the project directory
+`iron build`.
+#### Running the project
+To run the project, execute the following command from the project directory
+`iron start`.
 
 ## Contributing
 Iron is an open source project managed by iTEAM Consulting. We would love to see your ideas! Please review our [contributing guide](https://github.com/iteam-consulting/iteam-cli-iron/blob/master/CONTRIBUTING.md) and submit a PR!
