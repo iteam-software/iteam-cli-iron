@@ -35,8 +35,10 @@
   "dependencies": {
     "argparse": "^1.0.9",
     "chalk": "^2.3.0",
+    "fs-extra": "^4.0.2",
     "resolve": "^1.5.0",
     "rimraf": "^2.6.2",
+    "shelljs": "^0.7.8",
     "slug": "^0.9.1"
   },
   "devDependencies": {
