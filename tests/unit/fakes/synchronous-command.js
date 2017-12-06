@@ -22,8 +22,4 @@ module.exports = class SynchronousCommand extends Command {
       },
     ];
   }
-
-  name() {
-    return 'Fake:SynchronousCommand';
-  }
 };

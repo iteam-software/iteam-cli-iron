@@ -26,6 +26,7 @@ describe('create file', () => {
     });
 
     JSON.stringify = jest.fn();
+    console.log = jest.fn();
   });
 
   afterEach(() => jest.resetAllMocks());
