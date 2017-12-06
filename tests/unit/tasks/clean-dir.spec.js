@@ -1,22 +1,35 @@
 
-it('should clean a given dir', () => {
+beforeEach(() => {
+  jest.mock('path', () => ({
+    resolve: (a, b) => `${a}/${b}`,
+  }));
   jest.mock('rimraf', () => (p, cb) => {
-    expect(p).toEqual(expect.stringContaining('test'));
-    cb();
-  });
+    if (p.includes('fail')) {
+      cb(1);
+    } else {
+      cb(0);
+    }
+  })
+});
+
+it('should clean a given dir', () => {
+  expect.assertions(1);
+
   const cleanDir = require('../../../lib/tasks/clean-dir');  
 
   return cleanDir('test')()
-    .then(() => expect.anything());
+    .then(() => expect(true).toBeTruthy());
 });
 
 it('should gracefully handle an error', () => {
-  jest.mock('rimraf', () => (p, cb) => {
-    cb(1);
-  });
+  expect.assertions(1);
 
   const cleanDir = require('../../../lib/tasks/clean-dir');
 
-  return cleanDir('test')()
+  return cleanDir('fail')()
     .catch((err) => expect(err).toBe(1));
+});
+
+afterEach(() => {
+  jest.resetAllMocks();
 });

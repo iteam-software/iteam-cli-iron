@@ -17,6 +17,8 @@ describe('copy files', () => {
   });
 
   it('should copy files', () => {
+    expect.assertions(1);
+
     const copyFiles = require('../../../lib/tasks/copy-files');
 
     return copyFiles('test', 'dest')()
@@ -26,6 +28,8 @@ describe('copy files', () => {
   });
 
   it('should log a message about the copied files', () => {
+    expect.assertions(2);
+
     const copyFiles = require('../../../lib/tasks/copy-files');
     
     return copyFiles('test', 'dest')()
