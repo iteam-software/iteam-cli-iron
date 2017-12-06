@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node ./bin/iron",
     "test-ci": "jest --coverage && codecov",
+    "test-acceptance": "jest 'tests/acceptance/**/*.js'",
     "test": "jest",
     "watch": "jest --watch"
   },

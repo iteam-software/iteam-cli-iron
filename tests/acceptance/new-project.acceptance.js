@@ -2,8 +2,17 @@
 const FS = require('fs');
 
 describe('new project', () => {
+  let originalTimeout;
+
   // Initiate a new project command.
   beforeAll(() => {
+    // Save the timeout and override it so we can install packages
+    originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+
+    // 10 minutes to install packages
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 10 * 1000;
+
+    // Create the new command and run it.
     const NewCommand = require('../../lib/commands/new');
     return new NewCommand({name: 'test-project'}).run();
   });
@@ -39,6 +48,10 @@ describe('new project', () => {
   it('should be testable');
 
   afterAll(() => {
+    // Reset the jasmine timeout
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+
+    // Clean the test area
     return require('../../lib/tasks/clean-dir')('test-project')();
   });
 });
