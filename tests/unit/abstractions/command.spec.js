@@ -1,6 +1,8 @@
-const Command = require('../../lib/abstractions/command');
-const SynchronousCommand = require('./fakes/synchronous-command');
-const AsynchronousCommand = require('./fakes/asynchronous-command');
+'use strict';
+
+const Command = require('../../../lib/abstractions/command');
+const SynchronousCommand = require('../fakes/synchronous-command');
+const AsynchronousCommand = require('../fakes/asynchronous-command');
 
 it('should construct a command', () => {
   expect(new Command()).toBeTruthy();
