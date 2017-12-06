@@ -11,10 +11,10 @@ describe('cli:index', () => {
   it('should invoke commands', (done) => {
     expect.assertions(1);
 
-    mockNewCommand.prototype.run = jest.fn(() => Promise.resolve().then(() => {
+    mockNewCommand.prototype.run = () => Promise.resolve().then(() => {
       expect(true).toBe(true);
       done();
-    }));
+    });
 
     jest.mock('../../../lib/commands/new', () => mockNewCommand);
 
