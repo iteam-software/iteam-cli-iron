@@ -31,7 +31,9 @@ describe('copy files', () => {
     return copyFiles('test', 'dest')()
       .then((msg) => {
         expect(mockLog.mock.calls.length).toBe(1);
-        expect(mockLog.mock.calls[0][0]).toEqual('Copied data to dest.');
+        expect(mockLog.mock.calls[0][0]).toEqual(
+          expect.stringMatching('Copied data to dest.')
+        );
       });
   });
 
