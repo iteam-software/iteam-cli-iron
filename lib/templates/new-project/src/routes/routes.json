@@ -1,1 +1,5 @@
-[]
+[{
+  "name": "home",
+  "path": "/",
+  "component": "/src/routes/home"
+}]

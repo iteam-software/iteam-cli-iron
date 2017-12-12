@@ -74,9 +74,12 @@ describe('command:new', () => {
           'webpack-dev-server:true',
           'babel-core:true',
           'babel-loader:true',
+          'file-loader:true',
           'babel-preset-react:true',
           'babel-preset-env:true',
-          'html-webpack-plugin:true'
+          'babel-preset-stage-0:true',
+          'html-webpack-plugin:true',
+          'babel-plugin-transform-object-reset-spread:true',
         ]));
       });
   });
