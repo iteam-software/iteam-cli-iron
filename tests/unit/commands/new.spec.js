@@ -46,15 +46,15 @@ describe('command:new', () => {
 
   it('should run the correct tasks in sync mode', () => {
     const NewCommand = require('../../../lib/commands/new');
-    const command = new NewCommand({name: 'test-project'});
+    const command = new NewCommand({ name: 'test-project' });
 
     expect(command.isSync()).toBe(true);
-    
+
     return command.run()
       .then((r) => {
         // Project name
         expect(r).toEqual(expect.arrayContaining(['test-project']));
-        
+
         // copy files
         expect(r).toEqual(expect.arrayContaining([
           `${process.cwd()}/lib/templates/new-project:test-project`
@@ -66,6 +66,8 @@ describe('command:new', () => {
           'react:false',
           'react-router-dom:false',
           'react-redux:false',
+          'react-router-redux@next:false',
+          'history:false',
           'redux:false',
           'prop-types:false',
 
@@ -91,7 +93,7 @@ describe('command:new', () => {
 
   it('should have the correct name', () => {
     const NewCommand = require('../../../lib/commands/new');
-    const command = new NewCommand({name: 'test-project'});
+    const command = new NewCommand({ name: 'test-project' });
 
     expect(command.name()).toBe('new');
   });
