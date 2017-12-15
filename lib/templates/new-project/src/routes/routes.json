@@ -1,5 +1,5 @@
 [{
   "name": "home",
   "path": "/",
-  "component": "/src/routes/home"
+  "component": "/src/routes/Home"
 }]

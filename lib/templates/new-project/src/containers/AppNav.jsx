@@ -1,21 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {NavLink} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 class AppNav extends React.Component {
   render() {
-    <nav>
-      <ul>
-        {this.props.nav.items.map(({to, caption}) => (
-          <li key={caption}>
-            <NavLink to={to}>
-              {caption}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    return (
+      <nav>
+        <ul>
+          {this.props.nav.items.map(({ to, caption }) => (
+            <li key={caption}>
+              <NavLink exact to={to}>
+                {caption}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    );
   }
 }
 
@@ -29,4 +31,4 @@ AppNav.propTypes = {
   }),
 };
 
-export default connect(({nav}) => ({nav}))(AppNav);
+export default connect(({ nav }) => ({ nav }))(AppNav);

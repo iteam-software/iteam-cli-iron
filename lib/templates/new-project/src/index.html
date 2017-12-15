@@ -2,8 +2,111 @@
 <html lang="en">
   <head>
     <title>Iron App</title>
+    <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <style>
+      html {
+        font-family: 'Roboto', sans-serif;
+        background-color: #fffffa;
+      }
+
+      * > * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      header {
+        background-color: #004c8c;
+        color: rgba(255, 255, 255, .95);
+      }
+
+      nav {
+        background-color: #0277bd;
+        padding: 0 !important;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline-block;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        padding: 16px;
+        border-bottom: 4px solid transparent;
+        color: rgba(255, 255, 255, .87);
+        display: inline-block;
+      }
+
+      nav ul li a.active {
+        color: rgba(255, 255, 255, 1);
+        border-bottom-color: #58a5ef;
+      }
+
+      main {
+        background-color: #f1f1f1;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 300;
+      }
+
+      footer {
+        border-top: 1px solid rgba(0, 76, 140, .45);
+      }
+
+      header,
+      nav,
+      main,
+      footer {
+        padding: 16px 8px;
+      }
+
+      header > *,
+      nav > *,
+      main > *,
+      footer > * {
+        width: 1080px;
+        margin: 0 auto;
+      }
+
+      #global-error {
+        padding: 20px;
+        border: 1px solid rgba(0,0,0,.45);
+        border-radius: 4px;
+        background-color: rgba(0,0,0,.05);
+      }
+
+      button {
+        border: 1px solid rgba(0,0,0,.08);
+        cursor: pointer;
+        height: 36px;
+        min-width: 88px;
+        background-color: transparent;
+        transition: all ease-in-out 0.12s;
+        text-transform: uppercase;
+        border-radius: 2px;
+      }
+
+      button:hover {
+        background-color: black;
+        color: white;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import AppHeader from './AppHeader';
 import AppError from './AppError';
@@ -9,15 +9,17 @@ import AppNav from './AppNav';
 
 class AppLayout extends React.Component {
   render() {
-    <div>
-      <AppHeader />
-      <AppNav />
-      <main>
-        <AppError />
-        {this.props.children}
-      </main>
-      <AppFooter />
-    </div>
+    return (
+      <div id="layout">
+        <AppHeader />
+        <AppNav />
+        <main>
+          <AppError />
+          {this.props.children}
+        </main>
+        <AppFooter />
+      </div>
+    );
   }
 }
 
@@ -26,4 +28,4 @@ AppLayout.propTypes = {
   layout: PropTypes.object.isRequired,
 };
 
-export default connect(({layout}) => ({layout}))(AppLayout);
+export default connect(({ layout }) => ({ layout }))(AppLayout);

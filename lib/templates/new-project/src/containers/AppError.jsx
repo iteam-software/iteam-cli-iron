@@ -5,20 +5,40 @@ import { connect } from 'react-redux';
 import AppLayout from './AppLayout';
 
 class AppError extends React.Component {
+  /**
+   * Clear the current error
+   */
+  clearError() {
+    const { dispatch } = this.props;
+    dispatch({ type: '__IronApp__/Error:clear' });
+  }
+
   render() {
     const { error } = this.props;
-    return error && (
-      <section>
-        <h1>App Error</h1>
-        <p>{error.message}</p>
+    if (!error.code) {
+      return null;
+    }
+
+    return (
+      <section id="global-error">
+        <h3>App Error</h3>
+        <p>{error.instance.message}</p>
         {this.props.debugMode && (
-          <details>
-            <summary>Debug</summary>
-            <code>
-              {JSON.stringify(error, null, 2)}
-            </code>
+          <details open style={{marginTop: 20, marginBottom: 20}}>
+          <summary>Debug</summary>
+          <code>
+          <dl>
+          <dt>Code</dt>
+          <dd><pre>{error.code}</pre></dd>
+          <dt>Message</dt>
+          <dd><pre>{error.instance.message}</pre></dd>
+          <dt>Stack</dt>
+          <dd><pre>{error.instance.stack}</pre></dd>
+          </dl>
+          </code>
           </details>
         )}
+        <button onClick={this.clearError.bind(this)}>Ok</button>
       </section>
     );
   }
@@ -28,8 +48,8 @@ AppError.propTypes = {
   ...require('../lib/propTypeReactRedux'),
   debugMode: PropTypes.bool.isRequired,
   error: PropTypes.shape({
-    code: PropTypes.number.isRequired,
-    message: PropTypes.string.isRequired,
+    code: PropTypes.number,
+    message: PropTypes.string,
     instance: PropTypes.instanceOf(Error),
   }),
 };

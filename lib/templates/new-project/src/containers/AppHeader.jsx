@@ -7,7 +7,7 @@ class AppHeader extends React.Component {
     const {header, name} = this.props;
     return (
       <header>
-        {name}
+        <h2>{name}</h2>
       </header>
     );
   }

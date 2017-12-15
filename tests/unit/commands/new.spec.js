@@ -41,6 +41,11 @@ describe('command:new', () => {
     expect(command.defaultPackage).toEqual({
       version: '1.0.0',
       description: 'An awesome new Iron app',
+      scripts: {
+        test: 'jest',
+        build: 'webpack',
+        start: 'webpack-dev-server'
+      }
     });
   });
 
@@ -69,6 +74,7 @@ describe('command:new', () => {
           'react-router-redux@next:false',
           'history:false',
           'redux:false',
+          'redux-thunk:false',
           'prop-types:false',
 
           // dev deps
@@ -81,7 +87,7 @@ describe('command:new', () => {
           'babel-preset-env:true',
           'babel-preset-stage-0:true',
           'html-webpack-plugin:true',
-          'babel-plugin-transform-object-reset-spread:true',
+          'babel-plugin-transform-object-rest-spread:true',
         ]));
       });
   });
