@@ -69,6 +69,7 @@ describe('command:new', () => {
         expect(r).toEqual(expect.arrayContaining([
           // deps
           'react:false',
+          'react-router:false',
           'react-router-dom:false',
           'react-redux:false',
           'react-router-redux@next:false',
