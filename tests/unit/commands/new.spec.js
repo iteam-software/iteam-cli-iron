@@ -43,8 +43,8 @@ describe('command:new', () => {
       description: 'An awesome new Iron app',
       scripts: {
         test: 'jest',
-        build: 'webpack',
-        start: 'webpack-dev-server'
+        build: 'webpack --env.IRON_DEBUG=false --progress',
+        start: 'webpack-dev-server --env.IRON_DEBUG=true --history-api-fallback --content-base build/ --devtool source-map'
       }
     });
   });
