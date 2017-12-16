@@ -1,6 +1,6 @@
 {
   "name": "iteam-cli-iron",
-  "version": "0.1.5-alpha",
+  "version": "0.1.5-beta",
   "description": "iTEAM CLI: Iron is used to scaffold, build and deploy iTEAM Consulting front end web projects.",
   "main": "lib/cli/index.js",
   "scripts": {

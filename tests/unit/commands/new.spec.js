@@ -86,6 +86,7 @@ describe('command:new', () => {
           'file-loader:true',
           'babel-preset-react:true',
           'babel-preset-env:true',
+          'copy-webpack-plugin:true',
           'babel-preset-stage-0:true',
           'html-webpack-plugin:true',
           'babel-plugin-transform-object-rest-spread:true',
