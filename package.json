@@ -37,6 +37,9 @@
     "url": "https://github.com/iteam-consulting/iteam-cli-iron/issues"
   },
   "homepage": "https://iteam-consulting.github.io/iteam-cli-iron/",
+  "files": [
+    "lib/templates/new-project/**/.*"
+  ],
   "dependencies": {
     "argparse": "^1.0.9",
     "chalk": "^2.3.0",
